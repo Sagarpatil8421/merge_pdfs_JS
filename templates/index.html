@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFX</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(250, 235, 207);
+        }
+
+        header {
+            width: 100%;
+            background-color: rgb(217, 47, 47);
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: calc(90vh - 50px);
+            align-items: center;
+        }
+
+        .form-group{
+            margin: 8px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            font-size:x-large;
+        }
+
+        .btn-submit{
+            width: 75px;
+            height: 30px;
+            background-color:rgb(217, 47, 47) ;
+            color: white;
+            font-size: large;
+            padding: 2px;
+            border-radius: 8px;
+        }
+
+        @media screen and (max-width:600px) {
+            header{
+                height: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PDFX - Your favourite Pdf merger tool </h1>
+    </header>
+    <div class="conatiner">
+        <form method="post" action="/merge" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="formcontrol">Select the pdf file you want to merge</label><br>
+            </div>
+            <input class="form-control-file" type="file" name="pdfs" id="formcontrol" multiple accept=".pdf" required><br>
+            <input class="btn-submit"  type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
